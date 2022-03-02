@@ -1,11 +1,6 @@
 <?php
-    function print_tables($results)
+    function sanitize($string)
     {
-
-    }
-
-    function sanitize()
-    {
-
+        return preg_replace('/[^A-Za-z0-9. -]/', '', $string);
     }
 ?>
