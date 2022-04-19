@@ -1,6 +1,35 @@
 <?php
     function sanitize($string)
     {
-        return preg_replace('/[^A-Za-z0-9. -]/', '', $string);
+        $forbidden_chars = array(
+            "\"",
+            ";",
+            "-",
+            "$",
+            "%",
+            "'",
+            "+",
+            "-",
+            "*",
+            "<",
+            ">",
+            "=",
+            "?",
+            "!",
+            "\\",
+            "/",
+            ".",
+            "@",
+            ",",
+            "#",
+            ":",
+            "(",
+            ")",
+            "`",
+            "~",
+            " "
+        );
+        $result = str_replace($forbidden_chars,'',$string);
+        return $result;
     }
 ?>

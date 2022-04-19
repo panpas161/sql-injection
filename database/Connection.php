@@ -1,13 +1,18 @@
 <?php
+    include("conf/configuration.php");
+    define("MYSQL_HOST",$MYSQL_HOST);
+    define("MYSQL_USER",$MYSQL_USER);
+    define("MYSQL_PASS",$MYSQL_PASSWORD);
+    define("MYSQL_DB_NAME",$MYSQL_DATABASE_NAME);
     class Connection
     {
-        private $dbhost = "localhost";
+        private $dbhost = MYSQL_HOST;
 
-        private $dbuser = "root";
+        private $dbuser = MYSQL_USER;
 
-        private $dbpass = "";
+        private $dbpass = MYSQL_PASS;
 
-        private $dbname = "main_db";
+        private $dbname = MYSQL_DB_NAME;
 
         private $conn;
 
