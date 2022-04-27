@@ -1,7 +1,7 @@
 <?php
-	$SERVER_HOST = "localhost";
+	$SERVER_HOST = "localhost/sql-injection";
 	$MYSQL_HOST = "localhost";
 	$MYSQL_USER = "root";
-	$MYSQL_PASSWORD = "";
+	$MYSQL_PASSWORD = "root";
 	$MYSQL_DATABASE_NAME = "main_db";
 ?>

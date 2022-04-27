@@ -4,13 +4,13 @@
     $conn = new Connection();
     if($_POST['security'] == 0)
     {
-        $query = "SELECT * FROM Users WHERE username='" . $_POST['username'] . "' AND password='" . $_POST['password'] ."'";
+        $query = "SELECT * FROM Users WHERE username='" . $_POST['username'] . "' AND password='" . $_POST['password'] ."';";
     }
     else if($_POST['security'] == 1)
     {
         $username = sanitize($_POST['username']);
         $password = sanitize($_POST['password']);
-        $query = "SELECT * FROM Users WHERE username='" . $username . "' AND password='" . $password  ."'";
+        $query = "SELECT * FROM Users WHERE username='" . $username . "' AND password='" . $password  ."';";
     }
     $conn->executeQuery($query);
     $results = $conn->getQuery()->fetchAll(PDO::FETCH_ASSOC);
@@ -28,13 +28,19 @@
         </div>
         <table style='width:100%;border:1px solid;text-align: center;'>
             <tr>
+                <th>#</th>
                 <th>Username</th>
                 <th>Password</th>
+                <th>Access</th>
             </tr>
-                <?php if(!empty($results)){ foreach($results as $result){?>
+                <?php
+                if(!empty($results)){
+                    foreach($results as $result){?>
                 <tr>
+                    <td><?=$result['id']?></td>
                     <td><?=$result['username']?></td>
                     <td><?=$result['password']?></td>
+                    <td><?=$result['access']?></td>
                 </tr>
                 <?php }}; ?>
         </table>

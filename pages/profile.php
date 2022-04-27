@@ -26,7 +26,14 @@
                 <ul class="navbar-nav text-light" id="accordionSidebar">
                     <li class="nav-item"><a class="nav-link" href="index.php"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
                     <li class="nav-item"><a class="nav-link active" href="?page=pages/profile.php"><i class="fas fa-user"></i><span>Profile</span></a></li>
-                    <li class="nav-item"></li>
+                    <?php
+                    if($_SESSION['access'] >= 1)
+                    {
+                        ?>
+                        <li class="nav-item"><a class="nav-link" href="?page=pages/admin_panel.php"><i class="fas fa-tasks"></i><span>Admin Panel</span></a></li>
+                        <?php
+                    }
+                    ?>
                     <li class="nav-item"></li>
                     <li class="nav-item"></li>
                 </ul>
